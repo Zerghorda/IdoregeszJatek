@@ -129,11 +129,9 @@ public class IdoregeszJatek extends javax.swing.JFrame {
         LeirasTxtA.setEnabled(false);
         jScrollPane1.setViewportView(LeirasTxtA);
 
-        ParancsTxtF.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                ParancsTxtFInputMethodTextChanged(evt);
+        ParancsTxtF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ParancsTxtFActionPerformed(evt);
             }
         });
 
@@ -212,12 +210,25 @@ public class IdoregeszJatek extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_formWindowClosing
 
-    private void ParancsTxtFInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_ParancsTxtFInputMethodTextChanged
-      String parancs = ParancsTxtF.getText();
-      if (parancs.equals("észak")){
-          LeirasTxtA.setText(leirasok[1]);
-      }
-    }//GEN-LAST:event_ParancsTxtFInputMethodTextChanged
+    private void ParancsTxtFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParancsTxtFActionPerformed
+        String parancs = ParancsTxtF.getText();
+        String leiras = LeirasTxtA.getText();
+        if (parancs.equals("észak")) {
+            LeirasTxtA.setText(leirasok[1]);
+        } else if (parancs.equals("nyugat") & leiras.equals(leirasok[1])) {
+            LeirasTxtA.setText(leirasok[4]);
+        } else if (parancs.equals("nyugat") & leiras.equals(leirasok[4])) {
+            LeirasTxtA.setText(leirasok[8]);
+            JOptionPane.showConfirmDialog(rootPane, "Demo vége!", "Vége", 2);
+            System.exit(0);
+        }
+        else{
+            String uzenet="Nem jó parancsot adtál meg!";
+            String cim = "Rossz parancs!";
+            int ikon = JOptionPane.WARNING_MESSAGE;
+            JOptionPane.showMessageDialog(null, uzenet, cim, ikon);
+        }
+    }//GEN-LAST:event_ParancsTxtFActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

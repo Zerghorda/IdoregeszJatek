@@ -267,7 +267,7 @@
             </Container>
             <Component class="javax.swing.JTextField" name="ParancsTxtF">
               <Events>
-                <EventHandler event="inputMethodTextChanged" listener="java.awt.event.InputMethodListener" parameters="java.awt.event.InputMethodEvent" handler="ParancsTxtFInputMethodTextChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ParancsTxtFActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
