@@ -19,6 +19,7 @@ public class IdoregeszJatek extends javax.swing.JFrame {
         "Újra életerősnek érzed magad!",
         "Egy masszív, zárt ajtó előtt állsz.",
         "Ezt az ajtót nem nyitja a kulcsod!"};
+    String[] taskatartalma = {};
 
     public IdoregeszJatek() {
         initComponents();
@@ -221,9 +222,8 @@ public class IdoregeszJatek extends javax.swing.JFrame {
             LeirasTxtA.setText(leirasok[8]);
             JOptionPane.showConfirmDialog(rootPane, "Demo vége!", "Vége", 2);
             System.exit(0);
-        }
-        else{
-            String uzenet="Nem jó parancsot adtál meg!";
+        } else {
+            String uzenet = "Nem jó parancsot adtál meg!";
             String cim = "Rossz parancs!";
             int ikon = JOptionPane.WARNING_MESSAGE;
             JOptionPane.showMessageDialog(null, uzenet, cim, ikon);
